@@ -27,8 +27,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat '''
-                    docker stack rm php-app
-                    timeout /t 10
                     docker stack deploy -c docker-compose.yml php-app
                 '''
             }
